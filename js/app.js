@@ -23,6 +23,7 @@ function firstLoad() {
         list.innerHTML = buttons.join("");
     }
     input.focus();
+    input.value = "";
 }
 let send = document.querySelector("#send");
 send.addEventListener("click", () => {
@@ -52,5 +53,6 @@ function search() {
         list.innerHTML = buttons.join("");
     }
     input.focus();
+    input.value = "";
 }
 //# sourceMappingURL=app.js.map

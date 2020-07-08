@@ -32,6 +32,7 @@ function firstLoad(): void {
     list.innerHTML = buttons.join("");
   }
   input.focus();
+  input.value = ""
 }
 
 let send = document.querySelector("#send");
@@ -70,4 +71,5 @@ function search(): void {
     list.innerHTML = buttons.join("");
   }
   input.focus();
+  input.value = ""
 }
