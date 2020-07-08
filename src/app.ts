@@ -52,21 +52,18 @@ function search(): void {
   let countries: Country[] = JSON.parse(this.responseText);
 
   let buttons = countries.map(
-    (country) => `<div style="display:table; margin-bottom: 1em;"> 
-                        <div style="display: table-row;">
-                            <div style="display: table-cell;">
-                                <img src="${country.flag}" alt="couty flag" width="50%" style="margin-right: 1em;" >
-                            </div>
-                           <div style=" display: table-cell;   width:40%";>
-                                name: <p>${country.name}</p> <br>
-                                capital: <p>${country.capital}</p> <br>
-                                currencies: <p><br> code: ${country.currencies[0].code} <br> currencies name: ${country.currencies[0].name} <br> symbol: ${country.currencies[0].symbol} </p> <br>
-                                borders: <p>${country.borders}</p> <br>
-                                Top level domain : <p>${country.topLevelDomain}</p><br>
-                            </div>
-                          </div>
+    (country) => 
+                      `<div style="display:flex; margin-bottom: 1em;"> 
+                        <img src="${country.flag}" alt="couty flag" width="50%" style="margin-right: 1em;" >
+                        <div style=" display: inline-block;   width:40%";>
+                        name: <p>${country.name}</p> <br>
+                        capital: <p>${country.capital}</p> <br>
+                        currencies: <p><br> code: ${country.currencies[0].code} <br> currencies name: ${country.currencies[0].name} <br> symbol: ${country.currencies[0].symbol} </p> <br>
+                        borders: <p>${country.borders}</p> <br>
+                        Top level domain : <p>${country.topLevelDomain}</p><br>
+                        </div>
                     </div>
-                      `
+                    `
   );
   let list: Element | null = document.querySelector("#note");
   if (list) {
