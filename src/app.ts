@@ -1,6 +1,7 @@
 import getNorthwind from "./Ajax.js";
 import { Customer } from "./customer.model.js";
-window.addEventListener("load", () => {
+let all :Element | null = document.querySelector('#all')
+all.addEventListener("click", () => {
   getNorthwind(
     "https://restcountries.eu/rest/v2/all?fields=name;topLevelDomain;capital;currencies;borders;flag",
     firstLoad
@@ -10,17 +11,19 @@ window.addEventListener("load", () => {
 function firstLoad(): void {
   let customers: Customer[] = JSON.parse(this.responseText);
   // console.log(customers)
-  const header = `<tr><th> Name </th><th> Capital </th><th> currencies </th> <th> borders </th><th> top level domain </th></tr>`
+  
   let buttons = customers.map(
-    (customer) => `<div> 
-                        <img src="https://restcountries.eu/data/dza.svg" alt="couty flag" width="100">
-                        name: <h3>${customer.name}</h3>
-                        capital: <h3>${customer.capital}</h3>
-                        currencies: <h3>${customer.currencies}</h3> 
-                        borders: <h3>${customer.borders}</h3> 
-                        Top level domain : <h3>${customer.topLevelDomain}</h3>
+    (customer) => `<div style="display:flex; margin-bottom: 1em;"> 
+                        <img src="${customer.flag}" alt="couty flag" width="50%" style="margin-right: 1em;" >
+                        <div style=" display: inline-block;   width:40%";>
+                        name: <p>${customer.name}</p> <br>
+                        capital: <p>${customer.capital}</p> <br>
+                        currencies: <p><br> code: ${customer.currencies[0].code} <br> currencies name: ${customer.currencies[0].name} <br> symbol: ${customer.currencies[0].symbol} </p> <br>
+                        borders: <p>${customer.borders}</p> <br>
+                        Top level domain : <p>${customer.topLevelDomain}</p><br>
+                        </div>
                     </div>
-                    <br>`
+                    `
   );
   let list: Element | null = document.querySelector("#note");
   if (list) {

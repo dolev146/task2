@@ -5,32 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            background-color: lightseagreen;
+        }
         #note {
             display: flex;
             flex-wrap: wrap;
             height: 250px;
             position: relative;
+            
          }
 
         #container {
-            overflow: auto;
+            overflow-y: auto;
+            overflow-x: hidden;
             display: flex;
             position: relative;
-            background-color: lime;
+            background-color: darkkhaki;
             width: 99vw;
-            height: 30vh;
+            height: 50vh;
+        }
+
+        p {
+            display: inline;
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
-    <body style="text-align: center;">
+    <body>
 
         <h1> Give me the name of your country! </h1>
         <br>
         <br>
         <br>
-        <section><label for="input">insert your country</label>
-            <input id="input" type="text"> <button>send</button> </section>
+        <section>
+            <label for="input">insert your country</label>
+            <input id="input" type="text"> <button id="send">send</button>
+            <br> 
+            <button id="all"> Show all the Countries</button>
+        </section>
     
     
     
