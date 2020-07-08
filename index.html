@@ -9,7 +9,7 @@
             background-color: lightseagreen;
         }
         #note {
-            display: flex;
+            /* display: flex; */
             flex-wrap: wrap;
             height: 250px;
             position: relative;
@@ -23,24 +23,27 @@
             position: relative;
             background-color: darkkhaki;
             width: 99vw;
-            height: 50vh;
+            height: 60vh;
         }
 
         p {
             display: inline;
             font-size: 1.2em;
         }
+img{
+    margin: auto;
+    display: block;
+}
 
-        
     </style>
 </head>
 <body>
     <body>
-
+        <img src="hiclipart.com.png" alt="globe" width="130px">
         <h1 style="text-align: center;"> Give me the name of your country! </h1>
-        <br>
-        <br>
-        <br>
+        
+        
+        
         <section style="text-align: center;">
             <label for="input" >insert your country</label>
             <input id="input" type="text"> <button id="send">send</button>
@@ -59,25 +62,5 @@
         </div>
 
     <script src="js/app.js" type="module"></script>
-
-        <!-- <script>
-    
-            button = document.querySelector("button")
-            button.onclick = (e) => {
-            input = document.querySelector("input").value
-                info = getData(`http://api.openweathermap.org/data/2.5/weather?q=${input},uk&APPID=de398fce0dc6ed9364c99c99b01612ee`, () => {})
-                document.querySelector('div').innerHTML = `<h1>the weather is ${info.weather[0].description} in ${info.name}</h1> `
-            }
-    
-            function getData(url, cb) {
-                const xhr = new XMLHttpRequest();
-                xhr.onload = cb;
-                xhr.open('GET', url);
-                xhr.responseType = "json"
-                xhr.send();
-            }
-    
-    
-        </script>   -->
 </body>
 </html>
